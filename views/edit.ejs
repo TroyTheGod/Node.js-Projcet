@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		input {width: 100%;
+			 padding: 12px 20px;
+  			margin: 8px 0;
+				box-sizing: border-box;
+}
+	</style>
+	<title>Update Item</title>
+</head>
+<body>
+<h1 style="background: #ddd;padding: 20px 20px;">Update Item</h1>
+<div>
+	<form action="/edit" method="POST" enctype="multipart/form-data">
+                <label for="_id">ID:</label>
+                <input type="text" id="_id" name="_id" placeholder="_id" value="<%= result[0]._id%>" readonly><br>
+
+                <label for="name">Name*:</label>
+                <input type="text" id="name" name="name" placeholder="Name" value="<%= result[0].name%>"><br>
+                
+                <label for="inv_type">Type:</label>
+                <input type="text" id="inv_type" name="inv_type" placeholder="type of inventory" value="<%= result[0].type %> "><br>
+
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" name="quantity"  placeholder="quantity" value="<%= result[0].quantity %> "><br>
+                
+                <label for="street">Street:</label>
+                <input type="text" id="street" name="street"  placeholder="Street" value="<%= result[0].inventory.street  %> "><br>
+                
+                <label for="building">Building:</label>
+                <input type="text" id="building" name="building" placeholder="Building" value="<%= result[0].inventory.building %> "><br>
+                
+                <label for="zipcode">Country:</label>
+                <input type="text" id="country" name="country"  placeholder="Zipcode" value="<%=  result[0].inventory.country  %> "><br>
+
+                <label for="zipcode">Zipcode:</label>
+                <input type="text" id="zipcode" name="zipcode"  placeholder="Zipcode" value="<%= result[0].inventory.zipcode %> "><br>
+
+                <label for="latitude">GPS Latitude:</label>
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude" value="<%= result[0].inventory.lat %> "><br>
+                
+                <label for="longitude">GPS Longitude:</label>
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude" value="<%= result[0].inventory.lon %> "><br>
+
+                <div class="custom-file">
+                    <label class="custom-file-label" for="photo">Photo:</label>
+                    <input type="file" id="photo" name="photo" placeholder="Please upload JPEG/PNG format"><br>
+                </div>
+
+                <input type="submit" value="Update">
+            </form>
+</div>
+</body>
+</html>

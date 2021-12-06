@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		a {background-color:#4CAF50;border: none;color: white;padding: 10px 15px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;}
+		button {background-color:#4CAF50;border: none;color: white;padding: 10px 15px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;}
+	</style>
+	<title>Details</title>
+</head>
+<body>
+	<h1>Details of <%=item%></h1>
+	<div>
+        <% if(image[0].photo != null){ %>
+		<div><img width="200" height="200" src="data:<%=image[0].photoMimetype%>;base64, <%=image[0].photo%> "></div>
+        <% } %>
+		<div class="row">
+                    <p>Type: <%= result[0].type %>  </p><br>
+                    <p>Quantity: <%=result[0].quantity  %>  </p><br>
+                    <p>Street: <%=result[0].inventory.street  %> </p><br>
+                    <p>Building: <%=result[0].inventory.building  %> </p><br>
+                    <p>Country: <%=result[0].inventory.country  %> </p><br>
+                    <p>Zipcode: <%= result[0].inventory.zipcode %> </p><br>
+                    <p>GPS: <%=result[0].inventory.lat  %>,<%=result[0].inventory.lon  %> </p><br>
+                <p>Manager: <%=result[0].manager  %> </p><br>
+                <% if(result[0].inventory.lat != "" && result[0].inventory.lon != "" ){ %>
+                    <a href="/map?lat=<%= result[0].inventory.lat %>&lon=<%= result[0].inventory.lon %>"role="button">map</a>
+                    <% } %>
+            </div>
+	</div>
+	<div class="row ml-md-auto">
+
+                <a href="/edit?_id=<%= result[0]._id %>&amp;owner=<%=result[0].manager  %>  "role="button">Edit</a>
+                <a href="/delete?_id=<%= result[0]._id%>&amp;owner=<%=result[0].manager  %> " role="button">Delete</a>
+                
+                <button class="btn btn-primary" onclick="window.history.go(-1); return false;">Back</button>
+            </div>
+</body>
+</html>

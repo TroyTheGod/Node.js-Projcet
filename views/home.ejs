@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		a {background-color:#4CAF50;border: none;color: white;padding: 10px 15px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;}
+	</style>
+	<script type="text/javascript">
+			function myFunction(){
+				var items = <%-JSON.stringify(items)%>
+				for (var i of items){
+					if (i.name.includes(document.getElementById("myInput").value)){
+						document.getElementById(i.name).style.visibility = "visible";
+					}else{
+						document.getElementById(i.name).style.visibility = "collapse";
+					}
+				}
+			}
+	</script>
+	<title>Inventorys</title>
+</head>
+<body>
+	<div style="background-color: #ddd;text-align: center;">
+		<h1>Hello! <%= username %> </h1>
+		<h2>There are <%= numDocs %> items</h2>
+		<h2>S12563924 Cai Ming Ye</h2>
+		<h2>S1231350 Ng Cheng Fung</h2>
+	</div>
+	<div>
+		<a href="/create" style=" background-color:#4CAF50;border: none;color: white;padding: 10px 15px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">create new inventory</a>
+		<a href="/logout" style=" background-color:#4CAF50;border: none;color: white;padding: 10px 15px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;float:right;">logout</a>
+	</div>
+	<div>
+		Search inventory name:</br>
+		<input style="width:100%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search name:" name="bar">
+	</div>
+	<div>
+		Inventory Name<br>
+		<table id="inventory">	
+			<% for(var i of items){ %>
+				<tr id="<%= i.name%>"><td><a href="/item?id=<%= i._id%>"><%= i.name%></a></td></tr>
+			<%}%>
+		</table>
+	</div>
+</body>
+</html>

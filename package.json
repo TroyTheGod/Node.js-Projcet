@@ -1,0 +1,19 @@
+{
+    "name": "server",
+    "description": "",
+    "author": "",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "*",
+        "mongodb": "*",
+        "mongoose": "*",
+        "package.json": "^2.0.1",
+        "ejs": "*",
+        "express-formidable":"*",
+        "express-session":"*"
+    },
+    "engine": "node >= 0.10.0",
+    "scripts": {
+        "start": "node app"
+    }
+}

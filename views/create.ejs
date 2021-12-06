@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		input {width: 100%;
+			 padding: 12px 20px;
+  			margin: 8px 0;
+				box-sizing: border-box;
+}
+	</style>
+	<title>Create New Item</title>
+</head>
+<body>
+<h1 style="background: #ddd;padding: 20px 20px;">Create new inventory</h1>
+<div>
+	<form action="/create" method="POST" enctype="multipart/form-data">
+                <label for="name">Name*:</label>
+                <input type="text" id="name" name="name" placeholder="Name"><br>
+                
+                <label for="inv_type">Type:</label>
+                <input type="text" id="inv_type" name="inv_type" placeholder="type of inventory"><br>
+
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" name="quantity"  placeholder="quantity"><br>
+                
+                <label for="street">Street:</label>
+                <input type="text" id="street" name="street"  placeholder="Street"><br>
+                
+                <label for="building">Building:</label>
+                <input type="text" id="building" name="building" placeholder="Building"><br>
+                
+                <label for="zipcode">Country:</label>
+                <input type="text" id="country" name="country"  placeholder="Zipcode"><br>
+
+                <label for="zipcode">Zipcode:</label>
+                <input type="text" id="zipcode" name="zipcode"  placeholder="Zipcode"><br>
+
+                <label for="latitude">GPS Latitude:</label>
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude"><br>
+                
+                <label for="longitude">GPS Longitude:</label>
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude"><br>
+
+                <div class="custom-file">
+                    <label class="custom-file-label" for="photo">Photo:</label>
+                    <input type="file" id="photo" name="photo" placeholder="Please upload JPEG/PNG format"><br>
+                </div>
+
+                <input type="submit" value="Create">
+            </form>
+</div>
+</body>
+</html>
